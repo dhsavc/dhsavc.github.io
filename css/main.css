@@ -1,0 +1,199 @@
+/* ======= */
+/* GENERAL */
+/* ======= */
+
+:root {
+  --orange: linear-gradient(92deg, #f35626 0%,#feab3a 100%);
+  --blurple: linear-gradient(92deg, rgb(0, 102, 255) 0%, rgb(78, 59, 185) 100%);
+  --teal: linear-gradient(92deg, rgb(0, 102, 255) 0%, rgb(9, 170, 162) 100%);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #B4D5FF;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+/* ====== */
+/* COLORS */
+/* ====== */
+
+.rgb {
+  background: var(--orange);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: center;
+  animation: hue 50s infinite linear;
+}
+
+.blurple {
+  background: var(--blurple);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: center;
+  display: inline-block;
+}
+
+.teal {
+  background: var(--teal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: center;
+  display: inline-block;
+}
+
+.lime {
+  background: var(--lime);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: center;
+  display: inline-block;
+}
+
+/* ====== */
+/* BANNER */
+/* ====== */
+
+.banner {
+  height: calc(100vh + 5vw);
+  border-radius: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .banner:after {
+    position: absolute;
+    left: 0;
+    bottom: -5vw;
+    width: 100vw;
+    content: '';
+    border-left: 100vw solid transparent;
+    border-bottom: 5vw solid white;
+  }
+}
+
+.banner h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  font-size: 15rem;
+  user-select: none;
+}
+
+.banner .fa-chevron-down {
+  position: absolute;
+  text-decoration: none;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 60px;
+  transition: opacity 0.5s;
+  animation: bounce 2.5s infinite, hue 50s infinite linear;
+  font-size: 3.5rem;
+  color: white;
+  z-index: 10;
+}
+
+/* ======= */
+/* BUTTONS */
+/* ======= */
+
+.button {
+  margin-top: 10px;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.3s;
+  box-sizing: content-box;
+  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  background: var(--blurple);
+  color: white;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: -10px;
+  left: 5%;
+  height: 110%;
+  width: 90%;
+  opacity: 0.8;
+  border-radius: 50px;
+  
+  /* Declaring our shadow color inherit from the parent (button) */
+  background: inherit;
+  
+  /* Blurring the element for shadow effect */
+  filter: blur(6px);
+  
+  /* Transition for the magic */
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.button:hover, .button:focus {
+  text-decoration: none;
+  outline: none;
+  color: white;
+}
+
+.button:hover::after, .button:focus::after {
+  /* Changing blur effect */
+  filter: blur(4px);
+
+  /* And change the style properties */
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+
+.button:hover:active::after {
+  filter: blur(10px);
+}
+
+/* ============ */
+/* CONSTRUCTION */
+/* ============ */
+
+#construction {
+  margin-top: 5rem;
+}
+
+.gears {
+  width: 100%;
+  margin: 5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* ========== */
+/* ANIMATIONS */
+/* ========== */
+
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(-360deg);
+  }
+}
