@@ -13,7 +13,7 @@
   <body>
     <div class="jumbotron banner">
       <h1 class="rgb">&#923;VC</h1>
-      <a href="#about" class="fa fa-chevron-down rgb"></a>
+      <a href="#discord" class="fa fa-chevron-down rgb"></a>
     </div>
     <main class="container">
       <section id="discord" class="row">
@@ -83,5 +83,20 @@
       </section>
     </main>
     <script src="js/jquery.min.js"></script>
+    <script>
+      $(document).on('click', 'a[href^="#"]', function(e) {
+        e.preventDefault();
+
+        var href = $(this).attr('href');
+
+        if (href == '#') {
+          $('html, body').animate({
+            scrollTop: 0
+          }, 500);
+        } else {
+          document.querySelector(href).scrollIntoView({ behavior: 'smooth', block: window.innerWidth <= 800 ? 'start' : 'center' });
+        }
+      });
+    </script>
   </body>
 </html>
