@@ -105,7 +105,7 @@ html, body {
   text-align: center;
   margin: 0 auto;
   transition: 0.5s linear all;
-  animation: bounce 2.5s infinite, hue 50s linear;
+  animation: bounce 2.5s infinite, hue 50s infinite linear;
   font-size: 3.5rem;
   color: #212529;
 }
