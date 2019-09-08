@@ -4,8 +4,9 @@
 
 :root {
   --orange: linear-gradient(92deg, #f35626 0%,#feab3a 100%);
-  --blurple: linear-gradient(92deg, rgb(0, 102, 255) 0%, rgb(78, 59, 185) 100%);
+  --blurple: linear-gradient(92deg, rgb(78, 59, 185) 0%, rgb(0, 102, 255) 100%);
   --teal: linear-gradient(92deg, rgb(0, 102, 255) 0%, rgb(9, 170, 162) 100%);
+  --lime: linear-gradient(92deg, rgb(9, 170, 162) 0%, rgb(8, 216, 119) 100%);
 }
 
 html, body {
